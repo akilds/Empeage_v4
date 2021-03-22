@@ -32,6 +32,7 @@ public class empwage
              break;
     default : System.out.println("Invalid");
    }
+   Monthly_Wage += Total_Wage;
   }
   System.out.println("Mothly Wage : " + Monthly_Wage);
  }
