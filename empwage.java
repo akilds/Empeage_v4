@@ -7,7 +7,7 @@ public class empwage
   int Total_Fulltime_Hrs = 8;
   int Total_Parttime_Hrs = 4;
   int Wage_Per_Hr = 20;
-  int Total_Wage ;
+  int Total_Wage = 0;
   Random r = new Random();
   int a = r.nextInt(3);
   System.out.println(a);
@@ -22,6 +22,7 @@ public class empwage
    case 2 : System.out.println("Employee Absent");
             Total_Wage = 0;
             break;
+  default : System.out.println("Invalid");
   }
   System.out.println("Employee Wage : " + Total_Wage);
  }
