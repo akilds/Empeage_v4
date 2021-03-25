@@ -4,15 +4,14 @@ public class empwage
 {
  public static int Total_Fulltime_Hrs = 8;
  public static int Total_Parttime_Hrs = 4;
- public static int Wage_Per_Hr = 20;
- public static int emp_wage_calc()
+ public static int emp_wage_calc(int Total_Working_Hrs, int Total_Working_Days, int Wage_Per_Hr)
  {
   int Total_Wage = 0 ;
   int Monthly_Wage = 0;
   int Total_Hrs = 0;
   int Total_Days = 0;
   Random r = new Random();
-  while(Total_Days<20 || Total_Hrs<100)
+  while(Total_Days<Total_Working_Days || Total_Hrs<Total_Working_Hrs)
   {
    int a = r.nextInt(3);
    switch(a)
@@ -38,9 +37,14 @@ public class empwage
  }
  public static void main(String[] args)
  {
-  int Emp_Monthly_Wage;
-  Emp_Monthly_Wage = emp_wage_calc();
-  System.out.println("Mothly Wage : " + Emp_Monthly_Wage);
+  int Emp_Monthly_Wage_c1, Emp_Monthly_Wage_c2, Emp_Monthly_Wage_c3;
+  Emp_Monthly_Wage_c1 = emp_wage_calc(100,20,20);
+  System.out.println("Mothly Wage of company 1 : " + Emp_Monthly_Wage_c1);
+  Emp_Monthly_Wage_c2 = emp_wage_calc(110,21,25);
+  System.out.println("Mothly Wage of company 2 : " + Emp_Monthly_Wage_c2);
+  Emp_Monthly_Wage_c3 = emp_wage_calc(120,22,30);
+  System.out.println("Mothly Wage of company 3 : " + Emp_Monthly_Wage_c3);
+
  }
 }
 
