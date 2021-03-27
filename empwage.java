@@ -1,10 +1,18 @@
 import java.util.*;
 
-interface CompanyEmpWage
+class CompanyEmpWage
 {
- void EmpWageShow();
+ int Empwage;
+ CompanyEmpWage(int EmpWage)
+ {
+  this.Empwage = EmpWage;
+ }
+ public int EmpWageShow()
+ {
+  return Empwage;
+ }
 }
-public class empwage implements CompanyEmpWage
+public class empwage
 {
  public static int Total_Fulltime_Hrs = 8;
  public static int Total_Parttime_Hrs = 4;
@@ -43,12 +51,10 @@ public class empwage implements CompanyEmpWage
  }
  public static void Emp_Wage_Builder()
  {
-  empwage emwage = new empwage();
-  emwage.EmpWageShow();
- }
- public void EmpWageShow()
- {
-  System.out.println("Total Wage of Company : " + Emp_Monthly_Wage);
+  ArrayList<CompanyEmpWage> emwage = new ArrayList<CompanyEmpWage>();
+  emwage.add(new CompanyEmpWage(Emp_Monthly_Wage));
+  Wage_Each_Company = emwage.get(0).EmpWageShow();
+  System.out.println("Mothly Wage of company : " + Wage_Each_Company);
  }
  public static void main(String[] args)
  {
@@ -58,7 +64,10 @@ public class empwage implements CompanyEmpWage
   Emp_Wage_Builder();
   Emp_Monthly_Wage = emp_wage_calc(120,22,30);
   Emp_Wage_Builder();
+
  }
 }
+
+
 
 
