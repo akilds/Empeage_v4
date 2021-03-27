@@ -1,11 +1,24 @@
 import java.util.*;
 
+class CompanyEmpWage
+{
+ int Empwage;
+ CompanyEmpWage(int EmpWage)
+ {
+  this.Empwage = EmpWage;
+ }
+ public int EmpWageShow()
+ {
+  return Empwage;
+ }
+}
 public class empwage
 {
  public static int Total_Fulltime_Hrs = 8;
  public static int Total_Parttime_Hrs = 4;
  public static int Wage_Each_Company;
  public static int Emp_Monthly_Wage;
+ public static int index = 0;
  public static int emp_wage_calc(int Total_Working_Hrs, int Total_Working_Days, int Wage_Per_Hr)
  {
   int Total_Wage = 0 ;
@@ -39,8 +52,11 @@ public class empwage
  }
  public static void Emp_Wage_Builder()
  {
-  Wage_Each_Company = Emp_Monthly_Wage;
+  CompanyEmpWage[] emwage = new CompanyEmpWage[10];
+  emwage[index] = new CompanyEmpWage(Emp_Monthly_Wage);
+  Wage_Each_Company = emwage[index].EmpWageShow();
   System.out.println("Mothly Wage of company : " + Wage_Each_Company);
+  index++;
  }
  public static void main(String[] args)
  {
