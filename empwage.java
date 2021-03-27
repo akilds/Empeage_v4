@@ -4,6 +4,8 @@ public class empwage
 {
  public static int Total_Fulltime_Hrs = 8;
  public static int Total_Parttime_Hrs = 4;
+ public static int Wage_Each_Company;
+ public static int Emp_Monthly_Wage;
  public static int emp_wage_calc(int Total_Working_Hrs, int Total_Working_Days, int Wage_Per_Hr)
  {
   int Total_Wage = 0 ;
@@ -35,15 +37,19 @@ public class empwage
   }
   return Monthly_Wage;
  }
+ public static void Emp_Wage_Builder()
+ {
+  Wage_Each_Company = Emp_Monthly_Wage;
+  System.out.println("Mothly Wage of company : " + Wage_Each_Company);
+ }
  public static void main(String[] args)
  {
-  int Emp_Monthly_Wage_c1, Emp_Monthly_Wage_c2, Emp_Monthly_Wage_c3;
-  Emp_Monthly_Wage_c1 = emp_wage_calc(100,20,20);
-  System.out.println("Mothly Wage of company 1 : " + Emp_Monthly_Wage_c1);
-  Emp_Monthly_Wage_c2 = emp_wage_calc(110,21,25);
-  System.out.println("Mothly Wage of company 2 : " + Emp_Monthly_Wage_c2);
-  Emp_Monthly_Wage_c3 = emp_wage_calc(120,22,30);
-  System.out.println("Mothly Wage of company 3 : " + Emp_Monthly_Wage_c3);
+  Emp_Monthly_Wage = emp_wage_calc(100,20,20);
+  Emp_Wage_Builder();
+  Emp_Monthly_Wage = emp_wage_calc(110,21,25);
+  Emp_Wage_Builder();
+  Emp_Monthly_Wage = emp_wage_calc(120,22,30);
+  Emp_Wage_Builder();
 
  }
 }
